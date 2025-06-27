@@ -1,9 +1,6 @@
 pipeline {
-    // agent any
 
-    agent {
-            label 'windows'
-    }
+    agent any
 
     environment {
         NODE_ENV = 'production'
@@ -49,8 +46,8 @@ pipeline {
             }
             steps {
                 echo "✅ Deploying from ${env.GIT_BRANCH}"
-                bat 'scripts\\deploy.bat'
-                // sh './scripts/deploy.sh'
+                // bat 'scripts\\deploy.bat'
+                sh 'chmod +x scripts/deploy.sh && ./scripts/deploy.sh'
             }
         }
        

@@ -29,3 +29,6 @@ coverage/
 # PM2
 pids/
 pidfiles/
+
+# miscellaneous
+bonus/

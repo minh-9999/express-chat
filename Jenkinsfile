@@ -39,12 +39,16 @@ pipeline {
 
         stage('Deploy') {
             when {
-              branch 'main'
+                expression {
+                    return env.GIT_BRANCH?.endsWith('main')
+                }
             }
             steps {
-              bat 'scripts\\deploy.bat'
+                echo "✅ Deploying from ${env.GIT_BRANCH}"
+                bat 'scripts\\deploy.bat'
             }
-        }       
+        }
+       
 
     }
 

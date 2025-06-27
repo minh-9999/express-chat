@@ -47,7 +47,11 @@ pipeline {
             steps {
                 echo "✅ Deploying from ${env.GIT_BRANCH}"
                 // bat 'scripts\\deploy.bat'
-                sh 'chmod +x scripts/deploy.sh && ./scripts/deploy.sh'
+                sh '''
+                    npm install -g pm2
+                    chmod +x scripts/deploy.sh
+                    ./scripts/deploy.sh
+                '''
             }
         }
        

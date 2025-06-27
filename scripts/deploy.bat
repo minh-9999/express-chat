@@ -1,8 +1,13 @@
 @echo off
+echo [DEPLOY] Deploying express-chat locally...
 
-set SERVER_USER=your_user
-set SERVER_IP=your_server_ip
-set SERVER_PATH=/path/to/chat-app
+:: Stop the previous process if it exists (using PM2)
+pm2 stop express-chat || echo "No running process"
 
-ssh %SERVER_USER%@%SERVER_IP% ^
-    "cd %SERVER_PATH% && git pull origin main && npm install && (pm2 restart app || echo Restart failed)"
+:: Install dependencies if needed
+npm install
+
+:: Restart the application
+pm2 start app.js --name express-chat || echo "Start failed"
+
+echo [DEPLOY] Done!

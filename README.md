@@ -16,14 +16,19 @@ A simple real-time chat application built with Express.js and Socket.IO, with CI
 
 ---
 
-## 📦 Installation
+## 🏃 Getting Started
+
 
 ```bash
+git clone https://github.com/minh-9999/express-chat.git
+cd express-chat
 npm install
 npm start
 ```
 
-Then open [http://localhost:3000](http://localhost:3000)
+Then open [http://localhost:5000](http://localhost:5000)
+
+Every push to `main` automatically triggers CI via GitHub Actions (see [.github/workflows/node.js.yml](.github/workflows/node.js.yml)).
 
 ---
 

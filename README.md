@@ -12,7 +12,7 @@ A simple real-time chat application built with Express.js and Socket.IO, with CI
 ---
 
 ## 📸 Screenshot
-![chat demo](screenshot.png) <!-- optional, add image if available -->
+![chat demo](https://raw.githubusercontent.com/minh-9999/express-chat/refs/heads/main/docs/result.PNG) 
 
 ---
 
